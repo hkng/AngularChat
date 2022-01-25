@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="loginCard">
+    <h2 class="heading">Sign In</h2>
+    <form (submit)="login(loginForm)" #loginForm="ngForm">
+      <input
+        type="email"
+        name="email"
+        class="formInput"
+        placeholder="Email"
+        ngModel
+        required
+        #email
+      />
+      <input
+        type="password"
+        name="password"
+        class="formInput"
+        placeholder="Password"
+        ngModel
+        required
+        #email
+      />
+      <button type="submit" id="btn-login" [disabled]="!loginForm.valid">
+        Sign In
+      </button>
+    </form>
+  </div>
+</div>
