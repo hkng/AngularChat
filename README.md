@@ -2,8 +2,22 @@
 
 ## firebase setup
      Open firebase account https://console.firebase.google.com/
-     1. Authentication - enable Email/Password Sign-in method
-     2. Realtime Database - create realtime database
+     1. creat project
+     2. add Web app
+     3. update your firebaseconfig into src/environments/environment.ts
+         const firebaseConfig = {
+            apiKey: "you key",
+            authDomain: "angularchat-e2ffa.firebaseapp.com",
+            databaseURL: "https://angularchat-e2ffa-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "angularchat-e2ffa",
+            storageBucket: "angularchat-e2ffa.appspot.com",
+            messagingSenderId: "161504863541",
+            appId: "your id"
+          };
+     4. Authentication - enable Email/Password Sign-in method
+     5. Realtime Database - create realtime database
+
+     refer: https://www.securecoding.com/blog/angular-firebase-authentication-integration/
 
 ## download this source code and compile
     npm install
