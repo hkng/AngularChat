@@ -1,6 +1,7 @@
 import { AuthService } from './../services/auth.service';
 import { ChatMessageModel } from './../models/chat-message.model';
 import { Component, Input, OnInit } from '@angular/core';
+import { ChatService } from './../services/chat.service';
 
 @Component({
   selector: 'app-message',
@@ -15,8 +16,11 @@ export class MessageComponent implements OnInit {
   timeStamp: Date;
   isOwnMessage: boolean;
   ownEmail: string;
+  key: string;
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private chatService: ChatService ) {}
 
   ngOnInit(): void {
     this.authService.authUser().subscribe((user) => {
@@ -28,5 +32,12 @@ export class MessageComponent implements OnInit {
     this.timeStamp = new Date(chatMessage.timeSent);
     this.userEmail = chatMessage.email;
     this.username = chatMessage.username;
+    this.key = chatMessage.id;
+  }
+
+  deleteMessage(){
+    // console.log(event);
+    console.log(this.key);
+    this.chatService.deleteMessage(this.key);
   }
 }

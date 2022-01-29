@@ -5,6 +5,9 @@
      2. Realtime Database - create
 
 
+## angular build
+     ng build --prod --aot
+
 ## firebase hosting
       $ npm install -g firebase-tools
       $ firebase logout

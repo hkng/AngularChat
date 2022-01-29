@@ -63,6 +63,10 @@ export class ChatService {
     });
   }
 
+  deleteMessage(key: string) {
+    this.db.list<ChatMessageModel>('messages').remove(key);
+  }
+
   getMessages(receiverId: string): Observable<ChatMessageModel[]> {
     return this.db
       .object<UserModel>(`user/${this.user.uid}`)
