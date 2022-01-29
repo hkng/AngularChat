@@ -1,5 +1,11 @@
 # AngularChat
 
+## You need to have following software to run
+   1. Visual Studio code https://code.visualstudio.com/download
+   2. node js https://nodejs.org/en/download/
+   3. this repository
+
+   under this repository folder, type npm install
 ## firebase setup
      Open firebase account https://console.firebase.google.com/
      1. creat project
