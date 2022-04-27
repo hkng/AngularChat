@@ -90,7 +90,7 @@ export class ChatService {
               mergeMap((receiver) => {
                 return this.db
                   .list<ChatMessageModel>('messages', (ref) =>
-                    ref.limitToLast(25).orderByKey()
+                    ref.limitToLast(50).orderByKey()
                   )
                   .snapshotChanges()
                   .pipe(
